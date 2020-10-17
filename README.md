@@ -71,7 +71,7 @@ Description: Le nom du service lisible et clair pour les devs.
 After: Indique ce qui est nécéssaire d'être exécuté Pour le lancement du service et qui doit être lancé avant ce dernier.
 
 Liste de tous les services qui contiennent la ligne WantedBy=multi-user.target
-
+```
 grep -r  /usr/lib/systemd/system -e WantedBy=multi-user.target
-
+```
 ## Partie 3: Création de service
