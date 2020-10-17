@@ -151,6 +151,35 @@ Preuve du serveur web fonctionnel avec un curl
 </html>
 ```
 ## Sauvegarde
+Je récupère les scripts de sauvegarde du TP1 pour cette partie.
+Fichier .service:
+```
+[Unit]
+Description=backup
+
+[Service]
+Type=simple
+PIDFILE=/run/backup.pid
+ExecStartPre=/bin/backupBefore.sh
+ExecStart=/bin/backup.sh
+ExecStartPost=/bin/backupAfter.sh 
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Le fichier .timer:
+```
+[Unit]
+Description=Run backup every hour
+
+[Timer]
+OnCalendar=hourly
+
+[Install]
+WantedBy=timers.target
+```
+
 
 ## Autres features
 
@@ -209,10 +238,10 @@ Commande hostnamectl:
            Chassis: vm
         Machine ID: d5a55f0bb8caa848a1711588ab402c84
            Boot ID: e0257f7850864aa3b8e78574846860c3
-    Virtualization: kvm
-  Operating System: CentOS Linux 7 (Core)
-       CPE OS Name: cpe:/o:centos:centos:7
-            Kernel: Linux 3.10.0-1127.19.1.el7.x86_64
+    Virtualization: oracle
+  Operating System: CentOS Linux 8 (Core)
+       CPE OS Name: cpe:/o:centos:centos:8
+            Kernel: Linux 4.18.0-80.el8.x86_64
       Architecture: x86-64
 ```
 Mon hostname actuel est Localhost.localdomain on change ça avec:
@@ -224,10 +253,10 @@ Mon hostname actuel est Localhost.localdomain on change ça avec:
            Chassis: vm
         Machine ID: d5a55f0bb8caa848a1711588ab402c84
            Boot ID: e0257f7850864aa3b8e78574846860c3
-    Virtualization: kvm
-  Operating System: CentOS Linux 7 (Core)
-       CPE OS Name: cpe:/o:centos:centos:7
-            Kernel: Linux 3.10.0-1127.19.1.el7.x86_64
+    Virtualization: oracle
+  Operating System: CentOS Linux 8 (Core)
+       CPE OS Name: cpe:/o:centos:centos:8
+            Kernel: Linux 4.18.0-80.el8.x86_64
       Architecture: x86-64
 ```
 
