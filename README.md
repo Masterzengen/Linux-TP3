@@ -1,5 +1,5 @@
-#TP3
-##Partie 1
+# TP3
+## Partie 1
 
 Affichage du nombre de services systemd dispos sur la machine
 ```
@@ -18,7 +18,7 @@ Affichage du nombre de services systemd qui démarrent automatiquement au boot
 sudo systemctl list-unit-files -t service -a | grep -c enabled
 ```
 
-##Partie 2: Analyse de service
+## Partie 2: Analyse de service
 
 Etudier le service nginx.service (path en commentaire)
 ```
@@ -48,4 +48,4 @@ Liste de tous les services qui contiennent la ligne WantedBy=multi-user.target
 
 grep -r  /usr/lib/systemd/system -e WantedBy=multi-user.target
 
-##Partie 3: Création de service
+## Partie 3: Création de service
